@@ -1,5 +1,7 @@
 package fer.hr.nenr.SailorMoon.MISO;
 
+import fer.hr.nenr.FuzzySetPack.Operations;
+import fer.hr.nenr.Relations.Relations;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.ILogicDB;
 
 import java.util.HashMap;
@@ -8,7 +10,7 @@ import java.util.List;
 /**
  * Created by Ivan on 10.11.2015..
  */
-public class IntSystemMISO implements IIntSystem {
+public abstract class IntSystemMISO implements IIntSystem {
 
     ILogicDB db;
 
@@ -16,8 +18,5 @@ public class IntSystemMISO implements IIntSystem {
         this.db=db;
     }
 
-    @Override
-    public int resolve(HashMap<String,Integer> map) {
-        return 0;
-    }
+
 }

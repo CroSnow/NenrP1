@@ -1,5 +1,6 @@
 package fer.hr.nenr.SailorMoon;
 
+import fer.hr.nenr.SailorMoon.MISO.DekoderPack.DeNormer;
 import fer.hr.nenr.SailorMoon.MISO.IIntSystem;
 import fer.hr.nenr.SailorMoon.MISO.SailorSystem.AkcelerationSystem;
 import fer.hr.nenr.SailorMoon.MISO.SailorSystem.PathSystem;
