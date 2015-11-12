@@ -22,11 +22,22 @@ public class AkcDB extends FilledLogicDB {
             @Override
             public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
 
-                IFuzzySet x = Operations.binaryOperation(map.get("L"),FilledLogicDB.jakoBlizu(),norm);
-                IFuzzySet y= Operations.binaryOperation(x,FilledLogicDB.JakoDesno(),impl);
+                IFuzzySet x = Operations.binaryOperation(map.get("S"),FilledLogicDB.dobarSmijer(),norm);
+                IFuzzySet y= Operations.binaryOperation(x,FilledLogicDB.Ubrzaj(),impl);
                 return y;
             }
         });
+
+        rules.add(new IRule() {
+            @Override
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
+
+                IFuzzySet x = Operations.binaryOperation(map.get("S"),FilledLogicDB.losSmijer(),norm);
+                IFuzzySet y= Operations.binaryOperation(x,FilledLogicDB.Uspori(),impl);
+                return y;
+            }
+        });
+
     }
 
     @Override
