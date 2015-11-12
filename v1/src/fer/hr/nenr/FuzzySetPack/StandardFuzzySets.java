@@ -1,5 +1,7 @@
 package fer.hr.nenr.FuzzySetPack;
 
+import fer.hr.nenr.DomainPack.DomainElement;
+import fer.hr.nenr.DomainPack.IDomain;
 import fer.hr.nenr.FuzzySetPack.FunctionPack.IIntUnaryFunction;
 
 /**
@@ -63,6 +65,15 @@ public class StandardFuzzySets {
                 return 0;
             }
         };
+    }
+
+    public static IFuzzySet reverseSet (IFuzzySet set){
+        MutableFuzzySet reverse= new MutableFuzzySet(set.getDomain());
+        IDomain domain= set.getDomain();
+        for (DomainElement element:domain){
+            reverse.set(element,set.getValueAt(domain.elementForIndex(domain.getCardinality()-domain.indexOfElement(element))));
+        }
+        return reverse;
     }
 
 
