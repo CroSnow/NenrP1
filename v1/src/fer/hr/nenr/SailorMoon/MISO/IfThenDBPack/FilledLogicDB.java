@@ -39,7 +39,7 @@ public class FilledLogicDB extends LogicDB {
     private static int hJBrz=75;
 
     public FilledLogicDB() {
-        super(new SimpleDomain(0,this.domainSize));
+        super(new SimpleDomain(0,domainSize));
     }
 
     public IRule jakoBlizu(){
