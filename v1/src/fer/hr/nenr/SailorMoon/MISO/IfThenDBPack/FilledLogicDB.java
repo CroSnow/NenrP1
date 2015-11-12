@@ -11,20 +11,20 @@ import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.Rule.IRule;
 public abstract class FilledLogicDB extends LogicDB {
     private static int domainSize=100;
 
-    private static int lJakoBlizu=10;
-    private static int hJakoBlizu=20;
+    private static int lJakoBlizu=2;
+    private static int hJakoBlizu=7;
 
-    private static int lBlizu=15;
-    private static int pBlizu=20;
-    private static int hBlizu=35;
+    private static int lBlizu=5;
+    private static int pBlizu=10;
+    private static int hBlizu=15;
 
-    private static int lDaleko=30;
-    private static int hDaleko=40;
+    private static int lDaleko=12;
+    private static int hDaleko=30;
 
     private static int lMiruje = 0;
-    private static int hMiruje =4;
+    private static int hMiruje =7;
 
-    private static int lSpor=2;
+    private static int lSpor=5;
     private static int pSpor=10;
     private static int hSpor=20;
 
@@ -78,23 +78,23 @@ public abstract class FilledLogicDB extends LogicDB {
      * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      */
 
-    private static int lJakoLijevo = 10;
-    private static int hJakoLijevo= 20;
+    private static int lJakoLijevo = 5;
+    private static int hJakoLijevo= 7;
 
-    private static int lLijevo = 15;
-    private static int pLijevo = 30;
-    private static int hLijevo = 45;
+    private static int lLijevo = 5;
+    private static int pLijevo = 10;
+    private static int hLijevo = 20;
 
-    private static int lNemaSkretanja =35;
+    private static int lNemaSkretanja =15;
     private static int pNemaSkretanja=50;
-    private static int hNemaSkretanja=65;
+    private static int hNemaSkretanja=85;
 
-    private static int lDesno= 55;
-    private static int pDesno = 70;
-    private static int hDesno = 85;
+    private static int lDesno= 80;
+    private static int pDesno = 90;
+    private static int hDesno = 95;
 
-    private static int lJakoDesno=80;
-    private static int hJakoDesno = 90;
+    private static int lJakoDesno=93;
+    private static int hJakoDesno = 95;
 
     private static int lUsporiJako = 10;
     private static int hUsporiJako= 20;

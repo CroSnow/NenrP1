@@ -71,7 +71,7 @@ public class StandardFuzzySets {
         MutableFuzzySet reverse= new MutableFuzzySet(set.getDomain());
         IDomain domain= set.getDomain();
         for (DomainElement element:domain){
-            reverse.set(element,set.getValueAt(domain.elementForIndex(domain.getCardinality()-domain.indexOfElement(element))));
+            reverse.set(element,set.getValueAt(domain.elementForIndex(domain.getCardinality()-domain.indexOfElement(element)-1)));
         }
         return reverse;
     }

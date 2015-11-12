@@ -19,14 +19,13 @@ import java.util.Scanner;
 public class Test {
 
     public static void main(String[] args) {
-        testSystem(20,1000,50,960,10,1);
+        testSystem(10,10,10,10,10,1);
 
 
     }
 
     private static void testSystem(int L,int D,int LK,int DK,int V,int S){
 
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
         int akcel,kormilo;
 

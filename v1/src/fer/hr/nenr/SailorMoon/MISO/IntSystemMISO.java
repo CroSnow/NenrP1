@@ -27,7 +27,7 @@ public abstract class IntSystemMISO implements IIntSystem {
     protected IDomain standardDomain= new SimpleDomain(0,100);
     protected IIntFuzzyCalculator omjer13jedan= new OneCalculator(13);
     protected IIntFuzzyCalculator smjerMult=new OneCalculator((float) (1.0/70));
-    protected IIntFuzzyCalculator brzinaStoper = new OneCalculator(2);
+    protected IIntFuzzyCalculator brzinaStoper = new OneCalculator((float)(0.5));
     protected FuzzyKoder duljinaKoder = new FuzzyKoder(this.standardDomain,omjer13jedan);
     protected FuzzyKoder smjerKoder = new FuzzyKoder(this.standardDomain,smjerMult);
     protected FuzzyKoder brzinaKoder= new FuzzyKoder(this.standardDomain,brzinaStoper);
@@ -48,7 +48,8 @@ public abstract class IntSystemMISO implements IIntSystem {
                 set=rule.procces(map,impl,tNorm);
             }
             else{
-                set=Operations.binaryOperation(set,rule.procces(map,impl,tNorm),sNorm);
+                IFuzzySet secondSet=rule.procces(map,impl,tNorm);
+                set=Operations.binaryOperation(set,secondSet,sNorm);
             }
         }
         return this.dekoder.dekode(set);

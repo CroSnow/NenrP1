@@ -6,6 +6,7 @@ import fer.hr.nenr.SailorMoon.MISO.IIntSystem;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.AkcDB;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.SmjerDB;
 import fer.hr.nenr.SailorMoon.MISO.MinSystem;
+import fer.hr.nenr.SailorMoon.MISO.ProductSystem;
 
 
 import java.io.*;
@@ -25,8 +26,8 @@ public class SailorBoy {
         /**
          * init sustava
          */
-        IIntSystem akc= new MinSystem(new AkcDB(),new COADekoder());
-        IIntSystem korm=new MinSystem(new SmjerDB(),new COADekoder());
+        IIntSystem akc= new ProductSystem(new AkcDB(),new COADekoder());
+        IIntSystem korm=new ProductSystem(new SmjerDB(),new COADekoder());
         while(true){
             if((line = input.readLine())!=null){
                 if(line.charAt(0)=='K') break;
@@ -45,6 +46,9 @@ public class SailorBoy {
             map.put("DK",DK);
             map.put("V",V);
             map.put("S",S);
+            PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
+            writer.println(V);
+            writer.close();
 
             // fuzzy magic ...
             //Moraju biti int
