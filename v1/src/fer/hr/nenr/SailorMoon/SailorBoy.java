@@ -2,8 +2,7 @@ package fer.hr.nenr.SailorMoon;
 
 import fer.hr.nenr.SailorMoon.MISO.DekoderPack.DeNormer;
 import fer.hr.nenr.SailorMoon.MISO.IIntSystem;
-import fer.hr.nenr.SailorMoon.MISO.SailorSystem.AkcelerationSystem;
-import fer.hr.nenr.SailorMoon.MISO.SailorSystem.PathSystem;
+
 
 import java.io.*;
 import java.util.HashMap;
@@ -22,8 +21,8 @@ public class SailorBoy {
         /**
          * init sustava
          */
-        IIntSystem akc= new AkcelerationSystem();
-        IIntSystem korm = new PathSystem();
+        IIntSystem akc=null;
+        IIntSystem korm=null;
         while(true){
             if((line = input.readLine())!=null){
                 if(line.charAt(0)=='K') break;
@@ -45,8 +44,8 @@ public class SailorBoy {
 
             // fuzzy magic ...
             //Moraju biti int
-            akcel = akc.resolve(map);//akceleracija
-            kormilo = korm.resolve(map);//Moraju biti int+lijevo - desno [-90,90]
+            akcel = DeNormer.denormAkc(akc.resolve(map));//akceleracija
+            kormilo = DeNormer.denormKut(korm.resolve(map));//Moraju biti int+lijevo - desno [-90,90]
             System.out.println(akcel + " " + kormilo);
             System.out.flush();
         }

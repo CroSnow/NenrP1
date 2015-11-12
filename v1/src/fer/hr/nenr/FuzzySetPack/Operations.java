@@ -6,6 +6,7 @@ import fer.hr.nenr.DomainPack.IDomain;
 import fer.hr.nenr.FuzzySetPack.FunctionPack.IBinaryFunction;
 import fer.hr.nenr.FuzzySetPack.FunctionPack.IUnaryFunction;
 
+import javax.management.relation.Relation;
 import java.util.Iterator;
 
 /**
@@ -63,6 +64,17 @@ public class Operations {
             neoSet.set(element,function.valueAt(set1.getValueAt(element),set2.getValueAt(element)));
         }
         return  neoSet;
+    }
+    public static IBinaryFunction mandMin(){
+        return Operations.zadehAND;
+    }
+    public static IBinaryFunction mandProd(){
+        return new IBinaryFunction() {
+            @Override
+            public double valueAt(double x, double y) {
+                return x*y;
+            }
+        };
     }
     public static IUnaryFunction zadehNot(){
         return  Operations.zadehNOT;

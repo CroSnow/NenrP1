@@ -2,12 +2,13 @@ package fer.hr.nenr.SailorMoon.MISO.IfThenDBPack;
 
 import fer.hr.nenr.DomainPack.IDomain;
 import fer.hr.nenr.DomainPack.SimpleDomain;
+import fer.hr.nenr.FuzzySetPack.IFuzzySet;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.Rule.IRule;
 
 /**
  * Created by Ivan on 11.11.2015..
  */
-public class FilledLogicDB extends LogicDB {
+public abstract class FilledLogicDB extends LogicDB {
     private static int domainSize=100;
 
     private static int lJakoBlizu=10;
@@ -42,34 +43,34 @@ public class FilledLogicDB extends LogicDB {
         super(new SimpleDomain(0,domainSize));
     }
 
-    public IRule jakoBlizu(){
+    public IFuzzySet jakoBlizu(){
         return super.l(lJakoBlizu,hJakoBlizu);
     }
 
-    public IRule blizu(){
+    public IFuzzySet blizu(){
         return super.triangle(lBlizu,pBlizu,hBlizu);
     }
 
-    public IRule daleko(){
+    public IFuzzySet daleko(){
         return super.gamma(lDaleko,hDaleko);
     }
 
-    public IRule miruje(){
+    public IFuzzySet miruje(){
         return super.l(lMiruje,hMiruje);
     }
 
-    public IRule spor(){
+    public IFuzzySet spor(){
         return super.triangle(lSpor,pSpor,hSpor);
     }
 
-    public IRule normalna(){
+    public IFuzzySet normalna(){
         return  super.triangle(lNorm,pNorma,hNorma);
     }
 
-    public IRule brz(){
+    public IFuzzySet brz(){
         return super.triangle(lBrz,pBrz,hBrz);
     }
-    public IRule jakoBrz(){
+    public IFuzzySet jakoBrz(){
         return super.gamma(lJBrz,hJBrz);
     }
 
@@ -115,42 +116,42 @@ public class FilledLogicDB extends LogicDB {
     private static int lUbrzajJako=80;
     private static int hUbrzajJako= 90;
 
-    public IRule JakoLijevo(){
+    public IFuzzySet JakoLijevo(){
         return  super.l(lJakoLijevo,hJakoLijevo);
     }
-    public IRule Lijevo(){
+    public IFuzzySet Lijevo(){
         return  super.triangle(lLijevo,pLijevo,hLijevo);
     }
 
-    public IRule NemaSkretanja(){
+    public IFuzzySet NemaSkretanja(){
         return super.triangle(lNemaSkretanja,pNemaSkretanja,hNemaSkretanja);
     }
 
-    public IRule Desno(){
+    public IFuzzySet Desno(){
         return super.triangle(lDesno,pDesno,hDesno);
     }
 
-    public IRule JakoDesno(){
+    public IFuzzySet JakoDesno(){
         return super.gamma(lJakoDesno,hJakoDesno);
     }
 
 
-    public IRule UsporiJako(){
+    public IFuzzySet UsporiJako(){
         return  super.l(lUsporiJako,hUsporiJako);
     }
-    public IRule Uspori(){
+    public IFuzzySet Uspori(){
         return  super.triangle(lUspori,pUspori,hUspori);
     }
 
-    public IRule NeMijenjajAkc(){
+    public IFuzzySet NeMijenjajAkc(){
         return super.triangle(lNeMijenjajAkc,pNeMijenjajAkc,hNeMijenjajAkc);
     }
 
-    public IRule Ubrzaj(){
+    public IFuzzySet Ubrzaj(){
         return super.triangle(lUbrzaj,pUbrzaj,hUbrzaj);
     }
 
-    public IRule UbrzajJako(){
+    public IFuzzySet UbrzajJako(){
         return super.gamma(lUbrzajJako,hUbrzajJako);
     }
 
