@@ -1,7 +1,11 @@
 package fer.hr.nenr.SailorMoon;
 
+import fer.hr.nenr.SailorMoon.MISO.DekoderPack.COADekoder;
 import fer.hr.nenr.SailorMoon.MISO.DekoderPack.DeNormer;
 import fer.hr.nenr.SailorMoon.MISO.IIntSystem;
+import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.AkcDB;
+import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.SmjerDB;
+import fer.hr.nenr.SailorMoon.MISO.MinSystem;
 
 
 import java.io.*;
@@ -21,8 +25,8 @@ public class SailorBoy {
         /**
          * init sustava
          */
-        IIntSystem akc=null;
-        IIntSystem korm=null;
+        IIntSystem akc= new MinSystem(new AkcDB(),new COADekoder());
+        IIntSystem korm=new MinSystem(new SmjerDB(),new COADekoder());
         while(true){
             if((line = input.readLine())!=null){
                 if(line.charAt(0)=='K') break;

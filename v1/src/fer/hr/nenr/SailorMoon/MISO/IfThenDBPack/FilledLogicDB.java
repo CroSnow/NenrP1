@@ -39,39 +39,37 @@ public abstract class FilledLogicDB extends LogicDB {
     private static int lJBrz=65;
     private static int hJBrz=75;
 
-    public FilledLogicDB() {
-        super(new SimpleDomain(0,domainSize));
+
+
+    public static IFuzzySet jakoBlizu(){
+        return l(lJakoBlizu,hJakoBlizu);
     }
 
-    public IFuzzySet jakoBlizu(){
-        return super.l(lJakoBlizu,hJakoBlizu);
+    public static IFuzzySet blizu(){
+        return triangle(lBlizu,pBlizu,hBlizu);
     }
 
-    public IFuzzySet blizu(){
-        return super.triangle(lBlizu,pBlizu,hBlizu);
+    public static IFuzzySet daleko(){
+        return gamma(lDaleko,hDaleko);
     }
 
-    public IFuzzySet daleko(){
-        return super.gamma(lDaleko,hDaleko);
+    public static IFuzzySet miruje(){
+        return l(lMiruje,hMiruje);
     }
 
-    public IFuzzySet miruje(){
-        return super.l(lMiruje,hMiruje);
+    public static IFuzzySet spor(){
+        return triangle(lSpor,pSpor,hSpor);
     }
 
-    public IFuzzySet spor(){
-        return super.triangle(lSpor,pSpor,hSpor);
+    public static IFuzzySet normalna(){
+        return  triangle(lNorm,pNorma,hNorma);
     }
 
-    public IFuzzySet normalna(){
-        return  super.triangle(lNorm,pNorma,hNorma);
+    public static IFuzzySet brz(){
+        return triangle(lBrz,pBrz,hBrz);
     }
-
-    public IFuzzySet brz(){
-        return super.triangle(lBrz,pBrz,hBrz);
-    }
-    public IFuzzySet jakoBrz(){
-        return super.gamma(lJBrz,hJBrz);
+    public static IFuzzySet jakoBrz(){
+        return gamma(lJBrz,hJBrz);
     }
 
     /**
@@ -116,43 +114,43 @@ public abstract class FilledLogicDB extends LogicDB {
     private static int lUbrzajJako=80;
     private static int hUbrzajJako= 90;
 
-    public IFuzzySet JakoLijevo(){
-        return  super.l(lJakoLijevo,hJakoLijevo);
+    public static IFuzzySet JakoLijevo(){
+        return  l(lJakoLijevo,hJakoLijevo);
     }
-    public IFuzzySet Lijevo(){
-        return  super.triangle(lLijevo,pLijevo,hLijevo);
-    }
-
-    public IFuzzySet NemaSkretanja(){
-        return super.triangle(lNemaSkretanja,pNemaSkretanja,hNemaSkretanja);
+    public static IFuzzySet Lijevo(){
+        return  triangle(lLijevo,pLijevo,hLijevo);
     }
 
-    public IFuzzySet Desno(){
-        return super.triangle(lDesno,pDesno,hDesno);
+    public static IFuzzySet NemaSkretanja(){
+        return triangle(lNemaSkretanja,pNemaSkretanja,hNemaSkretanja);
     }
 
-    public IFuzzySet JakoDesno(){
-        return super.gamma(lJakoDesno,hJakoDesno);
+    public static IFuzzySet Desno(){
+        return triangle(lDesno,pDesno,hDesno);
+    }
+
+    public static IFuzzySet JakoDesno(){
+        return gamma(lJakoDesno,hJakoDesno);
     }
 
 
-    public IFuzzySet UsporiJako(){
-        return  super.l(lUsporiJako,hUsporiJako);
+    public static IFuzzySet UsporiJako(){
+        return  l(lUsporiJako,hUsporiJako);
     }
-    public IFuzzySet Uspori(){
-        return  super.triangle(lUspori,pUspori,hUspori);
-    }
-
-    public IFuzzySet NeMijenjajAkc(){
-        return super.triangle(lNeMijenjajAkc,pNeMijenjajAkc,hNeMijenjajAkc);
+    public static IFuzzySet Uspori(){
+        return  triangle(lUspori,pUspori,hUspori);
     }
 
-    public IFuzzySet Ubrzaj(){
-        return super.triangle(lUbrzaj,pUbrzaj,hUbrzaj);
+    public static IFuzzySet NeMijenjajAkc(){
+        return triangle(lNeMijenjajAkc,pNeMijenjajAkc,hNeMijenjajAkc);
     }
 
-    public IFuzzySet UbrzajJako(){
-        return super.gamma(lUbrzajJako,hUbrzajJako);
+    public static IFuzzySet Ubrzaj(){
+        return triangle(lUbrzaj,pUbrzaj,hUbrzaj);
+    }
+
+    public static IFuzzySet UbrzajJako(){
+        return gamma(lUbrzajJako,hUbrzajJako);
     }
 
 }

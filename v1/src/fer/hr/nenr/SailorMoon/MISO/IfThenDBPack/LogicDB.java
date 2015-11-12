@@ -1,6 +1,7 @@
 package fer.hr.nenr.SailorMoon.MISO.IfThenDBPack;
 
 import fer.hr.nenr.DomainPack.IDomain;
+import fer.hr.nenr.DomainPack.SimpleDomain;
 import fer.hr.nenr.FuzzySetPack.CalculatedFuzzySet;
 import fer.hr.nenr.FuzzySetPack.IFuzzySet;
 import fer.hr.nenr.FuzzySetPack.Operations;
@@ -22,31 +23,29 @@ import java.util.List;
  * ne skreni
  */
 public abstract class LogicDB implements ILogicDB {
-    private IDomain domain;
-    public LogicDB(IDomain domain){
-        this.domain=domain;
+    private static IDomain domain= SimpleDomain.intRange(0,100);
+
+
+    public static IFuzzySet l(int l,int h){
+        return (new CalculatedFuzzySet(domain, StandardFuzzySets.lFunction(l,h)));
     }
 
-    public IFuzzySet l(int l,int h){
-        return (new CalculatedFuzzySet(this.domain, StandardFuzzySets.lFunction(l,h)));
+    public static IFuzzySet triangle(int l, int p, int h){
+        return (new CalculatedFuzzySet(domain,StandardFuzzySets.lambdaFunction(l,p,h)));
     }
 
-    public IFuzzySet triangle(int l, int p, int h){
-        return (new CalculatedFuzzySet(this.domain,StandardFuzzySets.lambdaFunction(l,p,h)));
+    public static IFuzzySet gamma(int l,int h){
+        return (new CalculatedFuzzySet(domain,StandardFuzzySets.gammaFunction(l,h)));
     }
 
-    public IFuzzySet gamma(int l,int h){
-        return (new CalculatedFuzzySet(this.domain,StandardFuzzySets.gammaFunction(l,h)));
+    public static IFuzzySet losSmijer(){
+        return (new CalculatedFuzzySet(domain,StandardFuzzySets.lFunction((int)Math.round(domain.getCardinality()/2.0),
+                (int)Math.round(domain.getCardinality()/2.0))));
     }
 
-    public IFuzzySet losSmijer(){
-        return (new CalculatedFuzzySet(this.domain,StandardFuzzySets.lFunction((int)Math.round(this.domain.getCardinality()/2.0),
-                (int)Math.round(this.domain.getCardinality()/2.0))));
-    }
-
-    public IFuzzySet dobarSmijer(){
-        return (new CalculatedFuzzySet(this.domain,StandardFuzzySets.gammaFunction((int)Math.round(this.domain.getCardinality()/2.0),
-                (int)Math.round(this.domain.getCardinality()/2.0))));
+    public static IFuzzySet dobarSmijer(){
+        return (new CalculatedFuzzySet(domain,StandardFuzzySets.gammaFunction((int)Math.round(domain.getCardinality()/2.0),
+                (int)Math.round(domain.getCardinality()/2.0))));
     }
 
 
