@@ -11,6 +11,6 @@ import java.util.List;
  * Created by Ivan on 10.11.2015..
  */
 public interface IRule {
-    IFuzzySet procces(HashMap<String,IFuzzySet> map, IBinaryFunction impl,IBinaryFunction norm);
+    IFuzzySet procces(HashMap<String,IFuzzySet> map, IBinaryFunction impl,IBinaryFunction tNorm,IBinaryFunction sNorm);
 
 }

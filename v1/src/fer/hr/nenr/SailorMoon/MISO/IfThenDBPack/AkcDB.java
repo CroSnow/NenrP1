@@ -23,61 +23,61 @@ public class AkcDB extends FilledLogicDB {
         this.rules = new LinkedList<>();
         rules.add(new IRule() {
             @Override
-            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
 
-                IFuzzySet x = Operations.binaryOperation(map.get("S"),FilledLogicDB.dobarSmijer(),norm);
-                IFuzzySet y= Operations.binaryOperation(x,FilledLogicDB.Ubrzaj(),impl);
-                return y;
+                IFuzzySet x = Operations.binaryOperation(map.get("S"),FilledLogicDB.dobarSmijer(),tNorm);
+                IFuzzySet Y= Operations.binaryOperation(x,FilledLogicDB.Ubrzaj(),impl);
+                return Y;
             }
         });
 
         rules.add(new IRule() {
             @Override
-            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
 
-                IFuzzySet x = Operations.binaryOperation(map.get("S"),FilledLogicDB.losSmijer(),norm);
-                IFuzzySet y= Operations.binaryOperation(x,FilledLogicDB.Uspori(),impl);
-                return y;
+                IFuzzySet x = Operations.binaryOperation(map.get("S"),FilledLogicDB.losSmijer(),tNorm);
+                IFuzzySet Y= Operations.binaryOperation(x,FilledLogicDB.Uspori(),impl);
+                return Y;
             }
         });
 
 
         rules.add(new IRule() {
             @Override
-            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
 
-                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.jakoBrz(),norm);
-                IFuzzySet y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.UsporiJako(),impl);
-                return y;
+                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.jakoBrz(),tNorm);
+                IFuzzySet Y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.UsporiJako(),impl);
+                return Y;
             }
         });
         rules.add(new IRule() {
             @Override
-            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
 
-                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.miruje(),norm);
-                IFuzzySet y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.UbrzajJako(),impl);
-                return y;
-            }
-        });
-
-        rules.add(new IRule() {
-            @Override
-            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
-
-                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.spor(),norm);
-                IFuzzySet y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.Ubrzaj(),impl);
-                return y;
+                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.miruje(),tNorm);
+                IFuzzySet Y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.UbrzajJako(),impl);
+                return Y;
             }
         });
 
         rules.add(new IRule() {
             @Override
-            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction norm) {
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
 
-                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.brz(),norm);
-                IFuzzySet y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.Uspori(),impl);
-                return y;
+                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.spor(),tNorm);
+                IFuzzySet Y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.Ubrzaj(),impl);
+                return Y;
+            }
+        });
+
+        rules.add(new IRule() {
+            @Override
+            public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
+
+                IFuzzySet x = Operations.binaryOperation(map.get("V"),FilledLogicDB.brz(),tNorm);
+                IFuzzySet Y= Operations.binaryOperation(StandardFuzzySets.reverseSet(x),FilledLogicDB.Uspori(),impl);
+                return Y;
             }
         });
 

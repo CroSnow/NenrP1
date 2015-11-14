@@ -45,10 +45,10 @@ public abstract class IntSystemMISO implements IIntSystem {
             if(first){
 
                 first=false;
-                set=rule.procces(map,impl,tNorm);
+                set=rule.procces(map,impl,tNorm,sNorm);
             }
             else{
-                IFuzzySet secondSet=rule.procces(map,impl,tNorm);
+                IFuzzySet secondSet=rule.procces(map,impl,tNorm,sNorm);
                 set=Operations.binaryOperation(set,secondSet,sNorm);
             }
         }

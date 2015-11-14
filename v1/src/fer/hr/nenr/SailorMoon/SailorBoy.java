@@ -26,8 +26,8 @@ public class SailorBoy {
         /**
          * init sustava
          */
-        IIntSystem akc= new ProductSystem(new AkcDB(),new COADekoder());
-        IIntSystem korm=new ProductSystem(new SmjerDB(),new COADekoder());
+        IIntSystem akc= new MinSystem(new AkcDB(),new COADekoder());
+        IIntSystem korm=new MinSystem(new SmjerDB(),new COADekoder());
         while(true){
             if((line = input.readLine())!=null){
                 if(line.charAt(0)=='K') break;
