@@ -4,6 +4,7 @@ import fer.hr.nenr.SailorMoon.MISO.DekoderPack.COADekoder;
 import fer.hr.nenr.SailorMoon.MISO.DekoderPack.DeNormer;
 import fer.hr.nenr.SailorMoon.MISO.IIntSystem;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.AkcDB;
+import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.AkcDBv2;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.SmjerDB;
 import fer.hr.nenr.SailorMoon.MISO.MinSystem;
 
@@ -33,7 +34,7 @@ public class Test {
             /**
              * init sustava
              */
-        IIntSystem akc = new MinSystem(new AkcDB(),new COADekoder());
+        IIntSystem akc = new MinSystem(new AkcDBv2(),new COADekoder());
         IIntSystem korm = new MinSystem(new SmjerDB(),new COADekoder());
 
         map.put("L",L);

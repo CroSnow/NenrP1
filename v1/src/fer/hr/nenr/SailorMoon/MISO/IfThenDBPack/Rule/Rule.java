@@ -29,7 +29,7 @@ public class Rule  implements IRule{
     public IFuzzySet procces(HashMap<String, IFuzzySet> map, IBinaryFunction impl, IBinaryFunction tNorm,IBinaryFunction sNorm) {
         Set<String> keyset= mapRules.keySet();
         List<Double> values=new LinkedList<>();
-        IDomain domain = null;
+        IDomain domain = y.getDomain();
         for(String key :keyset){
             List<IFuzzySet> subList= mapRules.get(key);
             IFuzzySet ruleFuzzySet=subList.get(0);

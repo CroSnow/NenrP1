@@ -22,22 +22,22 @@ public abstract class FilledLogicDBv2 extends LogicDB {
     private static int hDaleko=30;
 
     private static int lMiruje = 0;
-    private static int hMiruje =7;
+    private static int hMiruje =10;
 
     private static int lSpor=5;
     private static int pSpor=10;
-    private static int hSpor=20;
+    private static int hSpor=25;
 
     private static int lNorm=15;
     private static int pNorma=35;
-    private static int hNorma=55;
+    private static int hNorma=65;
 
-    private static int lBrz=50;
-    private static int pBrz=60;
-    private static int hBrz=70;
+    private static int lBrz=55;
+    private static int pBrz=65;
+    private static int hBrz=75;
 
     private static int lJBrz=65;
-    private static int hJBrz=75;
+    private static int hJBrz=80;
 
 
 
