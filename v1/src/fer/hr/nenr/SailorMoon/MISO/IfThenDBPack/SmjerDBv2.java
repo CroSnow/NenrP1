@@ -49,7 +49,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list= new LinkedList<>();
         list.add(Operations.unaryOperation(jakoBlizu(),Operations.zadehNot()));
         map.put("LK",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,Lijevo()));
 
         map = new HashMap<>();
@@ -65,7 +67,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list= new LinkedList<>();
         list.add(Operations.unaryOperation(jakoBlizu(),Operations.zadehNot()));
         map.put("LK",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,Lijevo()));
 
         map= new HashMap<>();
@@ -89,7 +93,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list= new LinkedList<>();
         list.add(Operations.unaryOperation(jakoBlizu(),Operations.zadehNot()));
         map.put("DK",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,Desno()));
 
         map = new HashMap<>();
@@ -106,7 +112,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list= new LinkedList<>();
         list.add(Operations.unaryOperation(jakoBlizu(),Operations.zadehNot()));
         map.put("DK",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,Desno()));
 
 
@@ -126,7 +134,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list= new LinkedList<>();
         list.add(daleko());
         map.put("LK",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,JakoLijevo()));
 
         map = new HashMap<>();
@@ -143,11 +153,16 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list= new LinkedList<>();
         list.add(daleko());
         map.put("LK",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,JakoLijevo()));
 
         list.add(daleko());
         map.put("LK",list);
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,JakoLijevo()));
     }
 
@@ -157,7 +172,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
 
         list.add(jakoBlizu());
         map.put("L",list);
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         list= new LinkedList<>();
         list.add(daleko());
         map.put("D",list);
@@ -172,7 +189,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         map = new HashMap<>();
         list = new LinkedList<IFuzzySet>() ;
         list.add(blizu());
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         map.put("LK",list);
 
         list= new LinkedList<>();
@@ -188,7 +207,33 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
 
         list.add(daleko());
         map.put("DK",list);
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         rules.add(new Rule(map,JakoDesno()));
 
+    }
+
+    public void wrongPath(){
+        HashMap<String,List<IFuzzySet>> map = new HashMap<>();
+        List<IFuzzySet> list = new LinkedList<>();
+        list.add(Operations.unaryOperation(jakoBlizu(),Operations.zadehNot()));
+        map.put("DK",list);
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(losSmijer());
+        map.put("S",list);
+        rules.add(new Rule(map,JakoDesno()));
+
+        map=new HashMap<>();
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(Operations.unaryOperation(jakoBlizu(),Operations.zadehNot()));
+        map.put("LK",list);
+        list = new LinkedList<IFuzzySet>();
+        list.add(jakoBlizu());
+        map.put("DK",list);
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(losSmijer());
+        map.put("S",list);
+        rules.add(new Rule(map,JakoLijevo()));
     }
 }

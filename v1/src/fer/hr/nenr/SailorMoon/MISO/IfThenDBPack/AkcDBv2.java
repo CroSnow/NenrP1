@@ -41,7 +41,7 @@ public class AkcDBv2 extends FilledLogicDBv2 {
         list.add(miruje());
         list.add(normalna());
 
-        rules.add(new Rule(map,Ubrzaj()));
+        rules.add(new Rule(map,UbrzajJako()));
 
         map.put("V",list);
 
@@ -51,7 +51,7 @@ public class AkcDBv2 extends FilledLogicDBv2 {
         list.add(jakoBrz());
 
         map.put("V",list);
-        rules.add(new Rule(map,Uspori()));
+        rules.add(new Rule(map,UsporiJako()));
 
         map = new HashMap<>();
         list = new LinkedList<IFuzzySet>() ;
@@ -60,7 +60,7 @@ public class AkcDBv2 extends FilledLogicDBv2 {
         list = new LinkedList<>();
         list.add(brz());
         map.put("V",list);
-        rules.add(new Rule(map,Ubrzaj()));
+        rules.add(new Rule(map,UbrzajJako()));
 
         map = new HashMap<>();
         list = new LinkedList<IFuzzySet>() ;
