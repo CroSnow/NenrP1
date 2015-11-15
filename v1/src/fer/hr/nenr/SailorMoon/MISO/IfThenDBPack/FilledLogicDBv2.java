@@ -11,22 +11,22 @@ import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.Rule.IRule;
 public abstract class FilledLogicDBv2 extends LogicDB {
     private static int domainSize=100;
 
-    private static int lJakoBlizu=2;
+    private static int lJakoBlizu=1;
     private static int hJakoBlizu=7;
 
-    private static int lBlizu=5;
-    private static int pBlizu=10;
-    private static int hBlizu=15;
+    private static int lBlizu=3;
+    private static int pBlizu=7;
+    private static int hBlizu=10;
 
-    private static int lDaleko=12;
-    private static int hDaleko=30;
+    private static int lDaleko=7;
+    private static int hDaleko=10;
 
-    private static int lMiruje = 0;
-    private static int hMiruje =10;
+    private static int lMiruje = 5;
+    private static int hMiruje =15;
 
     private static int lSpor=5;
-    private static int pSpor=10;
-    private static int hSpor=25;
+    private static int pSpor=20;
+    private static int hSpor=35;
 
     private static int lNorm=15;
     private static int pNorma=35;
@@ -77,26 +77,27 @@ public abstract class FilledLogicDBv2 extends LogicDB {
      * +                    IZLAZ                              +
      * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      */
+    private static int lJakoLijevo = 93;
+    private static int hJakoLijevo= 95;
 
-    private static int lJakoLijevo = 5;
-    private static int hJakoLijevo= 7;
-
-    private static int lLijevo = 5;
-    private static int pLijevo = 10;
-    private static int hLijevo = 20;
+    private static int lLijevo = 85;
+    private static int pLijevo = 90;
+    private static int hLijevo = 95;
 
     private static int lNemaSkretanja =15;
     private static int pNemaSkretanja=50;
     private static int hNemaSkretanja=85;
 
-    private static int lDesno= 80;
-    private static int pDesno = 90;
-    private static int hDesno = 95;
+    private static int lDesno= 5;
+    private static int pDesno = 10;
+    private static int hDesno = 20;
 
-    private static int lJakoDesno=93;
-    private static int hJakoDesno = 95;
+    private static int lJakoDesno=5;
+    private static int hJakoDesno = 7;
 
-    private static int lUsporiJako = 10;
+
+
+    private static int lUsporiJako = 0;
     private static int hUsporiJako= 20;
 
     private static int lUspori = 15;
@@ -112,10 +113,10 @@ public abstract class FilledLogicDBv2 extends LogicDB {
     private static int hUbrzaj = 85;
 
     private static int lUbrzajJako=80;
-    private static int hUbrzajJako= 90;
+    private static int hUbrzajJako= 99;
 
     public static IFuzzySet JakoLijevo(){
-        return  l(lJakoLijevo,hJakoLijevo);
+        return  gamma(lJakoLijevo,hJakoLijevo);
     }
     public static IFuzzySet Lijevo(){
         return  triangle(lLijevo,pLijevo,hLijevo);
@@ -130,7 +131,7 @@ public abstract class FilledLogicDBv2 extends LogicDB {
     }
 
     public static IFuzzySet JakoDesno(){
-        return gamma(lJakoDesno,hJakoDesno);
+        return l(lJakoDesno,hJakoDesno);
     }
 
 

@@ -24,7 +24,6 @@ public class AkcDBv2 extends FilledLogicDBv2 {
         List<IFuzzySet> list = new LinkedList<IFuzzySet>() ;
         list.add(dobarSmijer());
         map.put("S",list);
-
         list= new LinkedList<>();
         list.add(spor());
         list.add(miruje());
@@ -55,12 +54,55 @@ public class AkcDBv2 extends FilledLogicDBv2 {
         rules.add(new Rule(map,Uspori()));
 
         map = new HashMap<>();
-
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
         list = new LinkedList<>();
         list.add(brz());
-
         map.put("V",list);
-        rules.add(new Rule(map,NeMijenjajAkc()));
+        rules.add(new Rule(map,Ubrzaj()));
+
+        map = new HashMap<>();
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(losSmijer());
+        map.put("S",list);
+        rules.add(new Rule(map,UsporiJako()));
+
+        this.makeExperimentalRules();
+    }
+    private void makeExperimentalRules(){
+        HashMap<String,List<IFuzzySet>> map = new HashMap<>();
+        List<IFuzzySet> list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
+        list =new LinkedList<>();
+        list.add(daleko());
+        map.put("LK",list);
+        rules.add(new Rule(map,Ubrzaj()));
+
+        map= new HashMap<>();
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(dobarSmijer());
+        map.put("S",list);
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(daleko());
+        map.put("DK",list);
+        rules.add(new Rule(map,Ubrzaj()));
+
+        map= new HashMap<>();
+
+        map.put("S",list);
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(jakoBlizu());
+        map.put("L",list);
+        rules.add(new Rule(map,Uspori()));
+
+        map= new HashMap<>();
+        list = new LinkedList<IFuzzySet>() ;
+        list.add(jakoBlizu());
+        map.put("D",list);
+        rules.add(new Rule(map,Uspori()));
+
     }
     public List<IRule> getRules() {
         return this.rules;

@@ -6,6 +6,7 @@ import fer.hr.nenr.SailorMoon.MISO.IIntSystem;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.AkcDB;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.AkcDBv2;
 import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.SmjerDB;
+import fer.hr.nenr.SailorMoon.MISO.IfThenDBPack.SmjerDBv2;
 import fer.hr.nenr.SailorMoon.MISO.MinSystem;
 
 import java.io.BufferedReader;
@@ -20,7 +21,7 @@ import java.util.Scanner;
 public class Test {
 
     public static void main(String[] args) {
-        testSystem(10,10,10,10,10,1);
+        testSystem(500,5,1000,10000,10,1);
 
 
     }
@@ -35,7 +36,7 @@ public class Test {
              * init sustava
              */
         IIntSystem akc = new MinSystem(new AkcDBv2(),new COADekoder());
-        IIntSystem korm = new MinSystem(new SmjerDB(),new COADekoder());
+        IIntSystem korm = new MinSystem(new SmjerDBv2(),new COADekoder());
 
         map.put("L",L);
         map.put("D",D);

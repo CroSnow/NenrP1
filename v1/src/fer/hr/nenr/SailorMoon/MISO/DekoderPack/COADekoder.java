@@ -14,9 +14,12 @@ public class COADekoder implements IDekoder {
         float up=0;
         float down= 0;
         IDomain domain=set.getDomain();
-        for(DomainElement element : domain){
-            up+=element.getComponentValue(0)*set.getValueAt(element);
-            down+=set.getValueAt(element);
+        for(DomainElement element : domain) {
+            up += element.getComponentValue(0) * set.getValueAt(element);
+            down += set.getValueAt(element);
+        }
+        if (down<=10E-9){
+            return (int) Math.round((float)domain.getCardinality()/2.0);
         }
         return Math.round(up/down);
     }
