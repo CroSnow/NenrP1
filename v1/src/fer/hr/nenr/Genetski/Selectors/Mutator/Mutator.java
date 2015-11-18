@@ -19,6 +19,8 @@ public class Mutator implements IMutator {
         this.chance=chance;
         this.l=l;
         this.h=h;
+        this.boundH=boundH;
+        this.boundL=boundL;
     }
     @Override
     public IGene mutate(IGene old) {

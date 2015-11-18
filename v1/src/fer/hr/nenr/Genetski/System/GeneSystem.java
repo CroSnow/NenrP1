@@ -13,29 +13,40 @@ import java.util.List;
 /**
  * Created by Ivan on 16.11.2015..
  */
-public class System {
+public class GeneSystem {
     ISelector selector;
     IMultipleTwoParamsRanker ranker;
     IPopulation population;
 
-    public System(ISelector selector,IMultipleTwoParamsRanker ranker){
+    public GeneSystem(ISelector selector,IMultipleTwoParamsRanker ranker){
         this.ranker=ranker;
         this.selector=selector;
 
     }
 
-    public void train(List<Double>X,List<Double>Y,List<Double>Z,int iterations){
+    public IGene train(List<Double>X,List<Double>Y,List<Double>Z,int iterations,double epsilon,int popSize){
         Boolean first=true;
-        this.population= Population.generetaRandomPopulation(100,5,-4,4);
+        IGene best = null;
+        this.population= Population.generetaRandomPopulation(popSize,5,-4,4);
         for(int i=0;i<iterations;i++){
             for(IGene gene:this.population.getGenes()) {
                 ranker.scoreAndWriteGene(gene, X, Y, Z);
             }
             if(first){
-                IGene best=population.getBest();
+                best = population.getBest().copy();
+                first=false;
+                System.out.println("Best: "+best+" with score of "+best.getScore()+" in iteration: "+i);
 
+            }
+            if(Double.compare(best.getScore(),(population.getBest().getScore()))>0){
+                best = population.getBest().copy();
+                System.out.println("Best: "+best+" with score of "+best.getScore()+" in iteration: "+i);
+            }
+            if (best.getScore()<epsilon){
+                return best;
             }
             this.population=selector.selectGenes(this.population);
         }
+        return best;
     }
 }

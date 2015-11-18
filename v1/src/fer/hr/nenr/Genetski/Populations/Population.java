@@ -35,7 +35,7 @@ public class Population implements IPopulation {
         IGene best =genes.get(0);
         for(int i=0;i<genes.size();i++){
             if(genes.get(i).getScore()<best.getScore()){
-                best=genes.get(i);
+                best=genes.get(i).copy();
             }
         }
         return best.copy();
@@ -43,5 +43,12 @@ public class Population implements IPopulation {
 
     public void setGenes(List<IGene> genes) {
         this.genes = genes;
+    }
+    public double getWholeFittnes(){
+        double fittnes=0;
+        for(IGene gen :this.genes){
+            fittnes+=gen.getFitness();
+        }
+        return fittnes;
     }
 }

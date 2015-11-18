@@ -32,13 +32,16 @@ public class Turnir implements ISelector {
             for(int i =0;i<3;i++){
 
                 int randSelected = rand.nextInt(all.size());
+                selectedInt.add(randSelected);
                 while(selectedInt.contains(randSelected)){
                     randSelected = rand.nextInt(all.size());
                 }
             }
+            int wortsI=0;
             IGene worst=all.get(selectedInt.get(0)).copy();
             if(worst.getScore()<all.get(selectedInt.get(1)).getScore()){
                 subSelected.add(worst.copy());
+                wortsI=1;
                 worst=all.get(selectedInt.get(1)).copy();
             }else{
                 subSelected.add(all.get(selectedInt.get(1)).copy());
@@ -47,12 +50,14 @@ public class Turnir implements ISelector {
             if(worst.getScore()<all.get(selectedInt.get(2)).getScore()){
                 subSelected.add(worst.copy());
                 worst=all.get(selectedInt.get(2)).copy();
+                wortsI=2;
             }else{
                 subSelected.add(all.get(selectedInt.get(2)).copy());
             }
-            subSelected.add(this.crosser.cross(subSelected.get(0),subSelected.get(1)));
+            all.remove(wortsI);
+            all.add(this.crosser.cross(subSelected.get(0),subSelected.get(1)));
 
-            for(IGene one:subSelected){
+            for(IGene one:all){
                 selected.add(mutator.mutate(one));
                 if(selected.size()==all.size()){
                     break;

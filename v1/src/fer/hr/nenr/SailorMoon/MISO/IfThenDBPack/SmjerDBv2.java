@@ -29,9 +29,9 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
 
     private void makeRules(){
         this.turnLeft();
-        this.turnRight();
-        this.turnSharpLeft();
-        this.turnSharpRight();
+       // this.turnRight();
+        //this.turnSharpLeft();
+        //this.turnSharpRight();
 
     }
 
@@ -54,7 +54,7 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         map.put("S",list);
         rules.add(new Rule(map,Lijevo()));
 
-        map = new HashMap<>();
+     /*   map = new HashMap<>();
         list = new LinkedList<IFuzzySet>() ;
         list.add(blizu());
         list.add(jakoBlizu());
@@ -70,7 +70,7 @@ public class SmjerDBv2 extends FilledLogicDBv2 {
         list = new LinkedList<IFuzzySet>() ;
         list.add(dobarSmijer());
         map.put("S",list);
-        rules.add(new Rule(map,Lijevo()));
+        rules.add(new Rule(map,Lijevo()));*/
 
         map= new HashMap<>();
         list= new LinkedList<>();

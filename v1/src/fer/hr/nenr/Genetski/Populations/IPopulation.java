@@ -10,4 +10,5 @@ import java.util.List;
 public interface IPopulation {
     List<IGene> getGenes();
     IGene getBest();
+    double getWholeFittnes();
 }

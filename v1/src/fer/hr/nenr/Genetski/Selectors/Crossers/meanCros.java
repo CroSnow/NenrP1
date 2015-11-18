@@ -15,7 +15,7 @@ public class meanCros implements  ICross {
         List<Double> secondWeights=second.getWeights();
         List<Double> newWeights=new LinkedList<>();
         for(int i=0;i<firstWeights.size();i++){
-            newWeights.add((firstWeights.get(i)+secondWeights.get(i))/2);
+            newWeights.add((firstWeights.get(i)+secondWeights.get(i))/2.0);
         }
         return first.newGene(newWeights);
     }

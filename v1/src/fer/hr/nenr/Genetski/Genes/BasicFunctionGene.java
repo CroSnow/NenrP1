@@ -23,7 +23,9 @@ public class BasicFunctionGene extends  AGene {
     }
 
     public BasicFunctionGene copy(){
-        return new BasicFunctionGene(new LinkedList<>(weights));
+        BasicFunctionGene gen= new BasicFunctionGene(new LinkedList<>(weights));
+        gen.setScore(this.getScore());
+        return gen;
     }
 
     @Override

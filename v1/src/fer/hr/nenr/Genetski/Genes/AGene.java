@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class AGene implements  IGene{
     protected List<Double> weights= new LinkedList<>();
     private double score;
+    private double fitness;
 
     public AGene(List<Double> weights){
         this.weights=new LinkedList<>(weights);
@@ -30,6 +31,13 @@ public abstract class AGene implements  IGene{
 
     public void setScore(double score) {
         this.score = score;
+        if (score !=0){
+            this.fitness=1/score;
+        }
+    }
+
+    public double getFitness(){
+        return  this.fitness;
     }
 
 
