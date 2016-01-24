@@ -58,7 +58,7 @@ public class Roulet implements ISelector {
         for(IGene gen:newPop){
             selected.add(mutator.mutate(gen));
         }
-        return new Population(selected);
+        return new Population(selected,population.getFunction());
     }
     private IGene chose(List<IGene> sorted,double value){
         int I =0;
@@ -72,7 +72,7 @@ public class Roulet implements ISelector {
                 value=value-gen.getFitness();
             }
         }
-        System.err.println("Chose za roulet nesto cudnoga");
+        //System.err.println("Chose za roulet nesto cudnoga");
         return sorted.get(sorted.size()-1);
 
     }

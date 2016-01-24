@@ -1,5 +1,6 @@
 package fer.hr.nenr.Genetski.Populations;
 
+import fer.hr.nenr.Genetski.Functions.IFunction;
 import fer.hr.nenr.Genetski.Genes.IGene;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface IPopulation {
     List<IGene> getGenes();
     IGene getBest();
     double getWholeFittnes();
+    int getFunCnt();
+    IFunction getFunction();
 }

@@ -1,5 +1,6 @@
 package fer.hr.nenr.Genetski.Genes;
 
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public abstract class AGene implements  IGene{
     protected List<Double> weights= new LinkedList<>();
     private double score;
     private double fitness;
+    boolean bin= false;
 
     public AGene(List<Double> weights){
         this.weights=new LinkedList<>(weights);
@@ -62,7 +64,11 @@ public abstract class AGene implements  IGene{
     public String toString() {
         String ret="Weights~";
         for (int i=0;i<weights.size();i++){
-            ret+=" B"+i+" = "+weights.get(i)+";";
+            if(this.bin==false) {
+                ret += " B" + i + " = " + weights.get(i) + ";";
+            }else{
+                ret += " B" + i + " = " + Long.toBinaryString(Double.doubleToRawLongBits(weights.get(i))) + ";";
+            }
         }
 
         return ret;

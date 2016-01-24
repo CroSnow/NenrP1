@@ -26,11 +26,12 @@ public class GeneTown {
 
     public static void main(String[] args){
         ICross cross= new meanCros();
-        IMutator mutator = new Mutator(0.1,-2,2,-4,4);
+        IMutator mutator = new Mutator(0.01,-2,2,-4,4);
         ISelector selector = new Roulet(mutator,cross,true);
-        GeneSystem geneSystem = new GeneSystem(selector,new MultipleTwoParamsRanker(new SingleTwoParamsQuadRanker()));
+        ISelector turnir= new Turnir(mutator,cross);
+        //GeneSystem geneSystem = new GeneSystem(selector,new MultipleTwoParamsRanker(new SingleTwoParamsQuadRanker()));
         List<List<Double>> XYZ = parseFromFile("gen-text2.txt");
-        IGene best = geneSystem.train(XYZ.get(0),XYZ.get(1),XYZ.get(2),1000,10E-4,100);
+        //IGene best = geneSystem.train(XYZ.get(0),XYZ.get(1),XYZ.get(2),10000,10E-4,20);
     }
 
 

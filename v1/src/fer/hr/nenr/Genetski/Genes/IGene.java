@@ -13,4 +13,5 @@ public interface IGene {
     IGene copy();
     IGene newGene(List<Double> weights);
     double getFitness();
+    double result();
 }

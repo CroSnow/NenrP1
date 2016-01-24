@@ -4,13 +4,19 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import fer.hr.nenr.Genetski.Functions.*;
 
 /**
  * Created by Ivan on 16.11.2015..
  */
 public class BasicFunctionGene extends  AGene {
-    public BasicFunctionGene(List<Double> weights) {
+    private IFunction function;
+
+
+    public BasicFunctionGene(List<Double> weights,IFunction function, boolean bin) {
         super(weights);
+        this.function = function;
+        this.bin = bin;
     }
 
     @Override
@@ -23,17 +29,22 @@ public class BasicFunctionGene extends  AGene {
     }
 
     public BasicFunctionGene copy(){
-        BasicFunctionGene gen= new BasicFunctionGene(new LinkedList<>(weights));
+        BasicFunctionGene gen= new BasicFunctionGene(new LinkedList<>(weights),this.function,this.bin);
         gen.setScore(this.getScore());
         return gen;
     }
 
     @Override
     public IGene newGene(List<Double> weights) {
-        return new BasicFunctionGene(weights);
+        return new BasicFunctionGene(weights,this.function,this.bin);
     }
 
-    public static BasicFunctionGene createStartGene(int weightCnt,double low, double high){
+    @Override
+    public double result() {
+        return this.function.calculateAndCount(this.weights);
+    }
+
+    public static BasicFunctionGene createStartGene(int weightCnt,double low, double high,IFunction function, boolean bin){
         List<Double> weights = new LinkedList<>();
         Random rand = new Random();
 
@@ -41,10 +52,8 @@ public class BasicFunctionGene extends  AGene {
             weights.add(rand.nextDouble()*(high-low)+low);
 
         }
-        return  new BasicFunctionGene(weights);
+        return  new BasicFunctionGene(weights,function,bin);
     }
 
-    public static BasicFunctionGene createDefStartGene(){
-        return createStartGene(5,-4,4);
-    }
+
 }

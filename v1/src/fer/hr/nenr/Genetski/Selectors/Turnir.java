@@ -65,6 +65,6 @@ public class Turnir implements ISelector {
             }
 
         }
-        return new Population(selected);
+        return new Population(selected,population.getFunction());
     }
 }
